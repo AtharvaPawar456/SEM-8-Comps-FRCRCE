@@ -1,0 +1,14 @@
+'''
+### Server Output:
+
+python -u "c:\Users\Atharva Pawar\Documents\GitHub\SEM-8-Comps-FRCRCE\Distributed-Computing-DC\lab\exp - 2\server.py"
+Server is listening on port 8000...
+127.0.0.1 - - [28/Feb/2024 23:57:21] "POST /RPC2 HTTP/1.1" 200 -
+
+
+### Client Output:
+
+PS C:\Users\Atharva Pawar\Documents\GitHub\SEM-8-Comps-FRCRCE\Distributed-Computing-DC\lab\exp - 2> python .\client.py
+Result from remote function: 8
+
+'''
