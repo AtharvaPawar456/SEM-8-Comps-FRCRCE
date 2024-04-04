@@ -11,10 +11,11 @@
 - lab 5 : https://github.com/AtharvaPawar456/SEM-8-Comps-FRCRCE/tree/main/Social-Media-Analytics-SMA/Labs/exp%20-%205
 
 - lab 6 : 
-- lab 7 : 
+- lab 7 : https://drive.google.com/file/d/1wX271okfBqnx0jT6362pvHQ2fMObPCKx/view
 - lab 8 : 
 
 ## Assignments:
 
-- assi-1 : Done : 
-- assi-2 : Done : 
+- assi-1 : https://drive.google.com/file/d/1QgV_WRk4LTJbIlIzT6O8-rIYDKbkblvL/view
+- assi-2 : https://drive.google.com/file/d/1bphRVLkha7ci78aN__zeqOS_6uL-7jny/view 
+- assi-3 :  
