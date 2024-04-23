@@ -1,5 +1,15 @@
 # SEM-8-Comps-FRCRCE
 
+# ADS :
+
+## Dataset : Height Weight
+    - https://www.kaggle.com/datasets/mustafaali96/weight-height
+
+## Kaggle Notebook : Height Weight
+    - https://www.kaggle.com/code/mrappplg/z-score-iqr-lof-dbscan
+
+
+
 
 Financial Management B.Com/BBA/MBA/M.Com Complete Course
 - https://www.youtube.com/playlist?list=PLaAhQ2ofZZRB3NEmEMkqoBm0QIpQkgJyK

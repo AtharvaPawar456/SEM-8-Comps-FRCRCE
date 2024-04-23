@@ -38,3 +38,29 @@ System.out.println("Election message is sent from "+(ele+1)+" to "+(i+1)); if(st
 } 
 }
 }
+
+
+
+
+PS C:\Users\Atharva Pawar\Documents\GitHub\SEM-8-Comps-FRCRCE\Distributed-Computing-DC\lab\exp - 7 - Election Algorithms> java Main
+Enter the number of process
+6
+For process 1:
+For process 4:
+Status:
+6
+Priority
+8
+For process 5:
+Status:
+4
+Priority
+2
+For process 6:
+Status:
+4
+Priority
+6
+Which process will initiate the election?
+4
+Final coordinator is 4
