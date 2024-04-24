@@ -1,0 +1,119 @@
+# This Python 3 environment comes with many helpful analytics libraries installed
+# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
+# For example, here's several helpful packages to load
+
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+
+# Input data files are available in the read-only "../input/" directory
+# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory
+
+import os
+for dirname, _, filenames in os.walk('/kaggle/input'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
+
+# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using "Save & Run All" 
+# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session
+
+
+
+### Z-Score
+
+
+import pandas as pd
+df = pd.read_csv('/kaggle/input/weight-height/weight-height.csv')
+df.drop("Weight", axis=1, inplace=True)
+
+df
+
+df['Height_zscore'] = (df['Height'] - df['Height'].mean()) / df['Height'].std()
+df
+
+
+threshold = 3
+
+outliers = df[(df['Height_zscore'] > threshold) | (df['Height_zscore'] < -threshold)]
+outliers.shape
+
+
+### IQR
+
+import pandas as pd
+df = pd.read_csv('/kaggle/input/weight-height/weight-height.csv')
+df.drop("Weight", axis=1, inplace=True)
+
+df
+
+df.describe()
+
+Q1 = df.Height.quantile(0.25)
+Q3 = df.Height.quantile(0.75)
+
+Q1, Q3
+
+IQR = Q3 - Q1
+IQR
+
+lower_limit = Q1 - 1.5 * IQR
+upper_limit = Q3 + 1.5 * IQR
+
+lower_limit, upper_limit
+
+df_outliers = df[(df.Height < lower_limit) | (df.Height > upper_limit)]
+df_outliers.shape
+
+df_no_outliers = df[(df.Height > lower_limit) & (df.Height < upper_limit)]
+df_no_outliers.shape
+
+
+### LOF
+
+import pandas as pd
+df = pd.read_csv('/kaggle/input/weight-height/weight-height.csv')
+df.drop("Weight", axis=1, inplace=True)
+
+df
+
+from sklearn.neighbors import LocalOutlierFactor
+
+# Assuming df is your DataFrame with the 'Height' column
+lof = LocalOutlierFactor()
+
+# Fit the model and predict outlier scores
+df['LOF_score'] = lof.fit_predict(df[['Height']])
+df
+
+unique_lof_scores = df['LOF_score'].unique()
+print(unique_lof_scores)
+
+# Print outliers (rows with LOF score < -1, by default)
+outliers = df[df['LOF_score'] <= -1]
+outliers.shape
+
+### DBSCAN
+
+
+import pandas as pd
+df = pd.read_csv('/kaggle/input/weight-height/weight-height.csv')
+df.drop("Weight", axis=1, inplace=True)
+
+df
+
+from sklearn.cluster import DBSCAN
+
+# Assuming df is your DataFrame with the 'Height' column
+dbscan = DBSCAN(eps=0.5, min_samples=8)  # Adjust eps and min_samples as needed
+
+# Fit the DBSCAN model and predict cluster labels
+df['DBSCAN_cluster'] = dbscan.fit_predict(df[['Height']])
+df
+
+unique_lof_scores = df['DBSCAN_cluster'].unique()
+print(unique_lof_scores)
+
+
+# Print outliers (rows with cluster label -1)
+outliers = df[df['DBSCAN_cluster'] == -1]
+print(outliers, '\n\n\n',outliers.shape)
+
