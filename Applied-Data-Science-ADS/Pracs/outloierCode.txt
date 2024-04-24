@@ -117,3 +117,16 @@ print(unique_lof_scores)
 outliers = df[df['DBSCAN_cluster'] == -1]
 print(outliers, '\n\n\n',outliers.shape)
 
+### Visualization
+
+import matplotlib.pyplot as plt
+
+
+# Create a boxplot
+plt.figure(figsize=(8, 6))
+plt.boxplot(df['Height'], vert=False)
+plt.scatter(outliers['Height'], [1] * len(outliers), color='red', label='Outliers')
+plt.xlabel('Height')
+plt.title('Boxplot of Height with Outliers')
+plt.legend()
+plt.show()

@@ -1,0 +1,12 @@
+Compare lof and the dbscan
+
+
+| Algorithm | Strengths                                             | Weaknesses                                          |
+|-----------|-------------------------------------------------------|------------------------------------------------------|
+| LOF       | - Considers local density to detect outliers         | - Sensitivity to parameter selection                 |
+|           | - Can handle varying density clusters                 | - Computationally intensive for large datasets       |
+|           | - Does not require specifying the number of clusters  |                                                      |
+|-----------|-------------------------------------------------------|------------------------------------------------------|
+| DBSCAN    | - Robust to noise and varying density clusters       | - Sensitivity to parameter selection                 |
+|           | - Does not require specifying the number of clusters  | - May struggle with clusters of different densities  |
+|           | - Can detect outliers as noise points                 |                                                      |
