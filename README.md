@@ -76,3 +76,6 @@ Communication Skills
 
 Communications Skills Training
 - https://www.youtube.com/playlist?list=PL6hthfHszOAA92rzPAqylicTBeXnQ4RT2
+
+
+- https://notepad.pw/mraZ5slFxtvEI9SOT2WQ
