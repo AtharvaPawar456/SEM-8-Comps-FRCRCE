@@ -79,3 +79,8 @@ Communications Skills Training
 
 
 - https://notepad.pw/mraZ5slFxtvEI9SOT2WQ
+
+
+- https://notepad.pw/WZOSYA00V5peULJgejix
+
+- https://sprl.in/m_y_d_c
